@@ -1,0 +1,10 @@
+<a data-ui-sref="wdinstagramNew">Add A New Wdinstagram</a>
+
+<h2>These are all the Wdinstagrams</h2>
+
+<div ng-repeat="wdi in vm.wdidata">
+  <p>
+    <a data-ui-sref="wdinstagramShow({id: wdi.id})">{{wdi.body}}</a>
+    (<a data-ui-sref="wdinstagramEdit({id: wdi.id})">Edit</a>)
+  </p>
+</div>
