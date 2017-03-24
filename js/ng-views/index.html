@@ -1,10 +1,15 @@
-<a data-ui-sref="wdinstagramNew">Add A New Wdinstagram</a>
-
-<h2>These are all the Wdinstagrams</h2>
-
-<div ng-repeat="wdi in vm.wdidata">
+<h2>All WDI Instagrams</h2>
+<div ng-repeat="data in vm.wdidata">
   <p>
-    <a data-ui-sref="wdinstagramShow({id: wdi.id})">{{wdi.body}}</a>
-    (<a data-ui-sref="wdinstagramEdit({id: wdi.id})">Edit</a>)
+    <a data-ui-sref="wdinstagramShow({id: $index})">{{data.body}} <a data-ng-click="vm.delete($index)">[X]</a>
   </p>
+</div>
+
+<hr />
+<h2>Add A New Wdinstagram</h2>
+<div>
+  <input data-ng-model="vm.newData.author" placeholder="Author"/><br />
+  <input data-ng-model="vm.newData.body" placeholder="Body" /><br />
+  <input data-ng-model="vm.newData.photo_url" placeholder="Photo URL" /><br />
+  <button data-ng-click="vm.create()">Create</button>
 </div>

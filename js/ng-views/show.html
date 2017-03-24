@@ -1,9 +1,13 @@
-<p>Hey {{vm.wdinstagram.author}}</p>
-<p>Hey {{vm.wdi.body}}</p>
-<img class="photo" ng-src={{wdi.photo_url}} />
+<h2>Hey {{vm.data.author}}</h2>
+<p>Hey {{vm.data.body}}</p>
+<img class="photo" ng-src={{vm.data.photo_url}} />
 
-<h2>{{showVm.wdi}}</h2>
 
-<h2>{{vm.wdi.body}}</h2>
-
-This is here
+<hr />
+<h2>Update Instagram!</h2>
+<form data-ng-submit="vm.update()">
+  <input data-ng-model="vm.data.author" value="vvm.data.author" /><br />
+  <input data-ng-model="vm.data.body" value="vm.data.body" /><br />
+  <input data-ng-model="vm.data.photo_url" value="vm.data.photo_url" /><br />
+  <button type="submit">Update</button>
+</form>
